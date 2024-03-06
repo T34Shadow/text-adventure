@@ -24,6 +24,7 @@
     <ProjectGuid>{f9c27c38-f456-42a8-af6c-6ce06ba86520}</ProjectGuid>
     <RootNamespace>TextAdventure</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Text Adventure</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,7 +128,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Text Adventure.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Items.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Rooms.cpp" />
+    <ClCompile Include="Spells.cpp" />
+    <ClCompile Include="String.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Items.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Rooms.h" />
+    <ClInclude Include="Spells.h" />
+    <ClInclude Include="String.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
