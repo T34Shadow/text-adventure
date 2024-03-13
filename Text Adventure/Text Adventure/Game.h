@@ -1,20 +1,12 @@
 #pragma once
-
+#include "Headers.h"
 class Game
 {
 public:
-	Game();
-	~Game();
+	//Game();
+	//~Game();
 
 private:
 
 protected:
 };
-
-Game::Game()
-{
-}
-
-Game::~Game()
-{
-}

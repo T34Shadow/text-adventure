@@ -1,32 +1,22 @@
 #pragma once
+#include "Headers.h"
 
-#include <cctype>
-#include <cstring>
-#include <iostream>
-
-class Items
+class Item
 {
 public:
-	Items(); //defult constructor
+	Item();
+	Item(const char* _item);
+	~Item();
 
-	Items(const char* item); //basic constructor 
+public:
+	String name;
+	String description;
+	virtual void use() const = 0;
 
-	Items(const Items&other); //copy constructor
-
-	~Items(); //Destructor 
-	
 private:
 
-	std::string name;
-	std::string description;
+	char* item;
 
-protected:
 };
 
-Items::Items()
-{
-}
 
-Items::~Items()
-{
-}

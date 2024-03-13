@@ -1,8 +1,11 @@
 
 #pragma once
-
-//#ifndef CUSTOM_STRING_HEADER
-//#define CUSTOM_STRING_HEADER
+#include "String.h"
+#include <cctype>
+#include <cstring>
+#include <iostream>
+#include <fstream>
+#include <cstddef>
 
 //contain a collection of characters 
 class String
@@ -38,7 +41,7 @@ public:
 	//String& Replace(const String& find, const String& replace);
 
 	String& ReadFromConsole();
-	String& WriteToConsole();
+	String& WriteToConsole(std::ostream& output);
 
 public:
 	bool operator==(const String& other);

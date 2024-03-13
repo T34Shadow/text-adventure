@@ -217,35 +217,6 @@ size_t String::Find(size_t startIndex, const String& _str)//Done
 	return(-1);
 }
 
-//String& String::Replace(const String& find, const String& replace) //todo
-//{
-//
-//
-//	//1.Fine the character that is to be replaced.
-//	//2.Replace the character buy removing the found character.
-//	//3.Append the character that we want to use for replace.
-//	// x Hello
-//	// y Kenobi
-//	//Hello there. General Kenobi. Hello
-//	//Kenobi there. General Kenobi. Hello
-//
-//	int pos = Find(find);
-//	int str1Length = Length();
-//	int str2Length = find.Length();
-//	int str3Length = replace.Length();
-//	int occurrences = 1;
-//
-//	
-//
-//	std::size_t newStringLength = (str2Length - str3Length) + str1Length;
-//	char* newStr = new char[newStringLength];
-//	
-//
-//
-//	return*this;
-//}
-
-
 String& String::ReadFromConsole() 
 {
 	
@@ -269,10 +240,11 @@ String& String::ReadFromConsole()
 	return*this;
 }
 
-String& String::WriteToConsole() //Done.
+String& String::WriteToConsole(std::ostream& output) //Done.
 {
-	std::cout << str << std::endl;
-	return*this;
+	//Print to the console.
+	output << str;
+	return *this;
 }
 
 bool String::operator==(const String& other) //done
