@@ -14,14 +14,10 @@ public:
 	String name;
 	String description;
 	
-	void Use();
+	virtual void Use() = 0;
 	
 
-private:
-
-	char* item;
-
-	
+private:	
 };
 
 

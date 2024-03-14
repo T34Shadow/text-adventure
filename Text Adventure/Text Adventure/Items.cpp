@@ -8,13 +8,12 @@
 #include "Items.h"
 
 Item::Item() //defualt constructor 
-	: item(nullptr)
 {
-	item = new char[1] {'\0'};
+
 }
 
 Item::Item(String _name, String _description)//basic constructor
-	:item(nullptr)
+
 {	
 	name = _name;
 	description = _description;
@@ -22,7 +21,7 @@ Item::Item(String _name, String _description)//basic constructor
 
 Item::~Item()//Destructor
 {
-	delete[] item;
+
 }
 
 void Item::Use(){}

@@ -39,6 +39,9 @@
     <ClCompile Include="ListOfItems.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lamp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lamp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
