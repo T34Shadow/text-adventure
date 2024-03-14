@@ -7,3 +7,10 @@
 
 #include "Rooms.h"
 
+Rooms::Rooms()
+{
+}
+
+Rooms::~Rooms()
+{
+}

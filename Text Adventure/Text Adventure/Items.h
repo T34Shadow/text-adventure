@@ -4,19 +4,24 @@
 class Item
 {
 public:
+
 	Item();
-	Item(const char* _item);
+	Item(String name, String description);
 	~Item();
 
 public:
+
 	String name;
 	String description;
-	virtual void use() const = 0;
+	
+	void Use();
+	
 
 private:
 
 	char* item;
 
+	
 };
 
 

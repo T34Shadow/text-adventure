@@ -13,12 +13,11 @@ Item::Item() //defualt constructor
 	item = new char[1] {'\0'};
 }
 
-Item::Item(const char* _item)//basic constructor
+Item::Item(String _name, String _description)//basic constructor
 	:item(nullptr)
 {	
-	std::size_t StringLength = std::strlen(_item) + 1;
-	item = new char[StringLength];
-	std::strncpy(item, _item, StringLength);
+	name = _name;
+	description = _description;
 }
 
 Item::~Item()//Destructor
@@ -26,6 +25,7 @@ Item::~Item()//Destructor
 	delete[] item;
 }
 
+void Item::Use(){}
 
 
 

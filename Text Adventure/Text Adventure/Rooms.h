@@ -1,5 +1,6 @@
 #pragma once
 #include "Headers.h"
+
 class Rooms
 {
 public:
@@ -8,13 +9,8 @@ public:
 
 private:
 
+	
+
 protected:
 };
 
-Rooms::Rooms()
-{
-}
-
-Rooms::~Rooms()
-{
-}
