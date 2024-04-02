@@ -24,8 +24,14 @@ Item::~Item()//Destructor
 
 }
 
-void Item::Use(){}
+void Item::Use()
+{
 
+}
+void Item::Use(String _playerInput)
+{
+
+}
 
 
 //Lamp

@@ -14,7 +14,8 @@ public:
 	String name;
 	String description;
 	
-	virtual void Use() = 0;
+	virtual void Use();
+	virtual void Use(String _playerInput);
 	
 
 private:	
