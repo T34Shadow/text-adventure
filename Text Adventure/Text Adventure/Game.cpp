@@ -8,3 +8,8 @@
 
 #include "Items.h"
 #include "Game.h"
+
+void GameState()
+{
+	
+}

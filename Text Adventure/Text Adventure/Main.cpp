@@ -1,4 +1,5 @@
 #include "Items.h"
+#include "Rooms.h"
 #include "Headers.h"
 #include "Game.h"
 #include "Lamp.h"
@@ -10,12 +11,16 @@
 
 int main()
 {
-	Item* item01 = new Lamp("Lamp ", "The lamp gives off a dim lighting. ");
+	Item* item01 = new Lamp("Lamp ", "The lamp gives off dim lighting. ");
 	Item* item02 = new BoxOfSweets("Box of sweets ", "This is a box of sweets with 6 donuts. ");
 	Item* item03 = new Cat("Ruby ", "This is a small cat that is white with blue eyes. ");
 
+	Rooms* room01 = new Rooms(item01, "This room is tall and wide, one might assume it is the centre of this building. ");
+
 	String _playerInput;
 	
+	room01->description.WriteToConsole(std::cout);
+	std::cout << std::endl;
 	item01->name.WriteToConsole(std::cout);
 	item01->description.WriteToConsole(std::cout);
 	std::cout << std::endl;
@@ -32,6 +37,8 @@ int main()
 	item01->Use(_playerInput);
 	_playerInput.ReadFromConsole().ToLower();
 	item02->Use(_playerInput);
+
+	
 
 	
 }

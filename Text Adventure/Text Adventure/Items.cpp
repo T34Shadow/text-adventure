@@ -32,22 +32,3 @@ void Item::Use(String _playerInput)
 {
 
 }
-
-
-//Lamp
-// turnOn: bool
-//	-Torch()
-//	-Descripiton() const void
-//	-Use() void
-
-//BoxOfSweets
-// countL: int
-//	-BoxOfSweets()
-//	-Descripiton() const void
-//	-Use() void
-
-//Cat
-// purring: bool
-//	-Cat()
-//	-Descripiton() const void
-//	-Use() void

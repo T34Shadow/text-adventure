@@ -9,8 +9,15 @@
 
 Rooms::Rooms()
 {
+
+}
+Rooms::Rooms(Item* _randItem, String _description)
+{
+	randItem = _randItem;
+	description = _description;
 }
 
 Rooms::~Rooms()
 {
+
 }
