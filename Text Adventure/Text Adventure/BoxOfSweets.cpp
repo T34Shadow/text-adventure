@@ -14,7 +14,7 @@ BoxOfSweets::~BoxOfSweets()
 void BoxOfSweets::Use(String _playerInput)
 {
 int donutCount = 6;
-	std::cout << "You are holding the box of sweets with " << donutCount << " you can eat one donut. " << std::endl;
+	std::cout << "You are holding the box of sweets with " << donutCount << " donuts, you can eat one donut. " << std::endl;
 	if (_playerInput == "eat")
 	{
 		std::cout << "You have eaten one of the donuts." << std::endl;

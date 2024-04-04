@@ -5,3 +5,18 @@
 //Damage <int>
 
 #include "Spells.h"
+
+Spells::Spells()
+{
+
+}
+
+Spells::Spells(String name, String description, int damage)
+{
+
+}
+
+Spells::~Spells()
+{
+
+}

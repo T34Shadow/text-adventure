@@ -8,11 +8,11 @@ public:
 
 	Rooms();
 
-	Rooms(Item* randItem, String description);
+	//Rooms(Item* item, String description);
 
 	~Rooms();
 
-	Item* randItem;
+	Item* item;
 	String description;
 
 

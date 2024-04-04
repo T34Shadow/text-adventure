@@ -17,6 +17,7 @@ Item::Item(String _name, String _description)//basic constructor
 {	
 	name = _name;
 	description = _description;
+
 }
 
 Item::~Item()//Destructor
