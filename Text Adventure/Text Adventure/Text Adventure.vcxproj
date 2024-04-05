@@ -137,10 +137,10 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="Lamp.cpp" />
-    <ClCompile Include="ListOfItems.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rooms.cpp" />
+    <ClCompile Include="sand.cpp" />
     <ClCompile Include="Spells.cpp" />
     <ClCompile Include="String.cpp" />
   </ItemGroup>
@@ -153,6 +153,7 @@
     <ClInclude Include="Lamp.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Rooms.h" />
+    <ClInclude Include="sand.h" />
     <ClInclude Include="Spells.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>

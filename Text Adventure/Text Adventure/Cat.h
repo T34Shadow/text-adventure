@@ -1,5 +1,5 @@
 #pragma once
-#pragma once
+
 #include "Headers.h"
 #include "Game.h"
 #include "Items.h"
@@ -9,6 +9,7 @@ public:
 	Cat();
 	Cat(String name, String description);
 	~Cat();
+	void Use(String _playerInput)override;
 	void Use() override;
 
 

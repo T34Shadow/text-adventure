@@ -5,10 +5,9 @@
 class Rooms
 {
 public:
-
 	Rooms();
 
-	//Rooms(Item* item, String description);
+	Rooms(Item& _itemSlot);
 
 	~Rooms();
 

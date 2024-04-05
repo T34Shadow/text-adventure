@@ -10,14 +10,11 @@ public:
 
 	~Player();
 
-	//player 
+	String MovePlayer();
 
-	int setPlayerLocation(int _xpos, int _ypos);
-	//void getPlayerLocation();
-
+	void setPlayerLocation(int _xpos, int _ypos);
+	
 	bool FindSpell(String spell);
-
-	String MovePlayer(String _playerInput);
 
 	//Player location.
 	int xpos = 0;

@@ -20,16 +20,27 @@ Lamp::~Lamp()
 
 void Lamp::Use(String _playerInput)
 {
-	std::cout << "You hold the lamp up and turn it 'On' or 'off'. " << std::endl;
-	if (_playerInput == "on")
+	if (_playerInput == "use")
 	{
-		std::cout << "The lamp has been turned on, with a dim light around it." << std::endl;
-		lampIsOn = true;
+		std::cout << "You hold the lamp up and turn it 'On' or 'off'. " << std::endl;
+		String newInput;
+		newInput.ReadFromConsole().ToLower();
+
+
+		if (newInput == "on")
+		{
+			std::cout << "The lamp has been turned on, with a dim light around it." << std::endl;
+			lampIsOn = true;
+		}
+		if (newInput == "off")
+		{
+			std::cout << "The lamp has been turned off, no light is being emitted." << std::endl;
+			lampIsOn = false;
+		}
 	}
-	if (_playerInput == "off")
+	else
 	{
-		std::cout << "The lamp has been turned off, no light is being emitted." << std::endl;
-		lampIsOn = false;
+		std::cout << "ERROR" << std::endl;
 	}
 
 }

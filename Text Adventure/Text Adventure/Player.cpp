@@ -19,18 +19,11 @@ Player::~Player()
 {
 }
 
-int Player::setPlayerLocation(int _xpos, int _ypos)
+void Player::setPlayerLocation(int _xpos, int _ypos)
 {
 	xpos = _xpos;
 	ypos = _ypos;
-
-	return xpos, ypos;
 }
-
-//void Player::getPlayerLocation()
-//{
-//	
-//}
 
 bool Player::FindSpell(String spell)
 {
@@ -50,64 +43,78 @@ bool Player::FindSpell(String spell)
 	//}
 }
 
-String Player::MovePlayer(String _playerInput)
+String Player::MovePlayer()
 {
 
-	//		0		1		2
-	//	0	room1	room2	room3	
-	//	1	room4	room5	room6
-	//	2	room7	room8	room9
+	//				<-	X  ->
+	//			0		1		2
+	// ^	0	room1	room2	room3	
+	// Y	1	room4	room5	room6
+	// v	2	room7	room8	room9
 
-	//get player location.what room are we in.
-	//can the player move in that direcation.
-	//if true move player to new location.
-	//if false dont move, and contuine.
+	//moving the player.
+	//1.check to see what direction the player wants to move in.
+	//2.check to see if the player is on the edges of the map.
+	//2a.if on the edges and wanting to move in a direction that is not available, return 'you cannot move in that direction.'
+	//3.if available set the players location, and return 'you have moved in "direction"'.
+
+	String command;
+	std::cout << "Where would you like to move." << std::endl;
+	command.ReadFromConsole().ToLower();
 	
-	//check to see where we are moving is valueed 
-
 	//Move North
-	if (xpos == 0)
+	if (command.EqualTo("move north") == true)
 	{
-		return "You cannot move in that direction";
-	}
+		if (ypos == 0)
+		{
+			return "You cannot move in that direction, you have hit a wall.";
+		}
 
-	else if (_playerInput.ToLower().EqualTo("move north") == true)
-	{
-		setPlayerLocation(xpos, ypos - 1);
-	
-		return "You have gone north";
-	}
+		else
+		{
+			setPlayerLocation(xpos, ypos - 1);
 
-	
-	
+			return "You have gone north";
+		}
+	}
 	//Move East
-	if (ypos == 2)
+	if (command.EqualTo("move east") == true)
 	{
-		return "You cannot move in that direction";
+		if (xpos == 2)
+		{
+			return "You cannot move in that direction, you have hit a wall.";
+		}
+		else
+		{
+			setPlayerLocation(xpos + 1, ypos);
+			return "You have gone east";
+		}
 	}
-	else if (_playerInput.ToLower().EqualTo("move east") == true)
-	{
-		setPlayerLocation(xpos + 1, ypos);
-	}
-
 	//Move South
-	if (xpos == 2)
+	if (command.EqualTo("move south") == true)
 	{
-		return "You cannot move in that direction";
+		if (ypos == 2)
+		{
+			return "You cannot move in that direction, you have hit a wall.";
+		}
+		else
+		{
+			setPlayerLocation(xpos, ypos + 1);
+			return "You have gone south";
+		}
 	}
-	else if (_playerInput.ToLower().EqualTo("move south") == true)
-	{
-		setPlayerLocation(xpos, ypos + 1);
-	}
-
 	//Move West
-	if (ypos == 0)
+	if (command.EqualTo("move west") == true)
 	{
-		return "You cannot move in that direction";
-	}
-	else if (_playerInput.ToLower().EqualTo("move west") == true)
-	{
-		setPlayerLocation(xpos - 1, ypos);
+		if (xpos == 0)
+		{
+			return "You cannot move in that direction, you have hit a wall.";
+		}
+		else
+		{
+			setPlayerLocation(xpos - 1, ypos);
+			return "You have gone west";
+		}
 	}
 }
 
