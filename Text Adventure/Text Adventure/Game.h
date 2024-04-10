@@ -14,7 +14,7 @@ public:
 
 	Player* mainPlayer;
 	Rooms* dungeon[3][3];
-	
+	Item** collectionItems;
 	
 
 private:

@@ -15,7 +15,7 @@ Game::Game()
 	mainPlayer = new Player;
 
 	//Items
-	Item** collectionItems = new Item*[9];
+	collectionItems = new Item*[9];
 
 	Item* item00 = new Cat("Ruby", " This is a white cat, it has 3 legs, poor cat. ");
 	Item* item01 = new Lamp("Lamp", " This is a small lamp that lights up the area around it when on. ");
@@ -66,4 +66,25 @@ Game::Game()
 
 Game::~Game()
 {
+	//iterate and delete every room.
+	for (int x = 0; x < 3; x++)
+	{
+		for (int y = 0; y < 3; y++)
+		{
+			delete dungeon[x][y];
+		}
+	}
+	delete[] dungeon;
+
+
+	//delete the player 
+	delete mainPlayer;
+
+
+	//iterate and delete every item.
+	for (int i = 0; i < 9; i++)
+	{
+		delete collectionItems[i];
+	}
+	delete[] collectionItems;
 }

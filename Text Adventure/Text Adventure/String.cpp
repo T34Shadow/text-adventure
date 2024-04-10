@@ -280,3 +280,26 @@ const char& String::operator[](size_t index) const //Done
 {
 	return str[index];
 }
+bool String::operator<(const String& other)
+{
+	int strcmpINT = strcmp(str, other.str);
+	if (strcmpINT < 0)
+	{
+		return true;
+	}
+	else return false;
+
+}
+
+bool String::operator>(const String& other)
+{
+	int strcmpINT = strcmp(str, other.str);
+	if (strcmpINT > 0)
+	{
+		return true;
+	}
+	else return false;
+
+
+}
+

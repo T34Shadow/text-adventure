@@ -1,22 +1,24 @@
-//required is:
-//Player name.
-//spell list <string>
-//FindSpell
 
 #include "Player.h"
 
 Player::Player()
 {
-	playerSpellBook[0] = new Spells("chill touch. ", "The target takes 8 hitpoints of necrotic damage. ", 8);
-	playerSpellBook[1] = new Spells("eldritch blast. ", "The target takes 10 hitpoints of force damage. ", 10);
-	playerSpellBook[2] = new Spells("frostbite. ", "The target takes 6 hitpoints of cold damage. ", 6);
-	playerSpellBook[3] = new Spells("mind silver. ", "The target takes 6 hitpoints of psychic damage. ", 6);
-	playerSpellBook[4] = new Spells("poison spray. ", "The target takes 12 hitpoints of poison damage. ", 12);
-	playerSpellBook[5] = new Spells("thunderclap. ", "The target takes 6 hitpoints of thunder damage. ", 6);
+	playerSpellBook[0] = new Spells("chill touch", "The target takes 8 hitpoints of necrotic damage. ", 8);
+	playerSpellBook[1] = new Spells("eldritch blast", "The target takes 10 hitpoints of force damage. ", 10);
+	playerSpellBook[2] = new Spells("frostbite", "The target takes 6 hitpoints of cold damage. ", 6);
+	playerSpellBook[3] = new Spells("mind silver", "The target takes 6 hitpoints of psychic damage. ", 6);
+	playerSpellBook[4] = new Spells("poison spray", "The target takes 12 hitpoints of poison damage. ", 12);
+	playerSpellBook[5] = new Spells("thunderclap", "The target takes 6 hitpoints of thunder damage. ", 6);
 }
 
 Player::~Player()
 {
+	//iterate and delete every spell
+	for (int i = 0; i < 6; i++)
+	{
+		delete playerSpellBook[i];
+	}
+	delete[] playerSpellBook;
 }
 
 void Player::setPlayerLocation(int _xpos, int _ypos)
@@ -32,15 +34,44 @@ bool Player::FindSpell(String spell)
 	//Make sure spell list is sorted.
 	//Binary search
 
-	//if ()
-	//{
-	//	return true;
-	//}
-	//if ()
-	//{
-	return false;
+	//low - start of array
+	//high - end of array
+	//target - middle of array
+	
+	//while loop - low is <= high.
+	//if = return true 
+	// 
+	//if less then change the high to the target 
+		//move target to the middle of high and low 
+	//if > then change the low to the target +1
+		//move target to the middle of high and low
+	//else return fales. 
+	
+	int low = 0;
+	int high = 5;
+	int center;
 
-	//}
+	while (low <= high)
+	{
+
+		center = ((high + low) / 2);
+
+		if (spell == playerSpellBook[center]->name)
+		{
+			return true;
+		}
+		else if (spell < playerSpellBook[center]->name)
+		{
+			high = center - 1;
+		}
+		else if (spell > playerSpellBook[center]->name)
+		{
+			low = center + 1;
+		}
+		
+	}
+		 return false;		
+
 }
 
 String Player::MovePlayer()
@@ -63,7 +94,7 @@ String Player::MovePlayer()
 	command.ReadFromConsole().ToLower();
 	
 	//Move North
-	if (command.EqualTo("move north") == true)
+	if (command.EqualTo("north") == true)
 	{
 		if (ypos == 0)
 		{
@@ -78,7 +109,7 @@ String Player::MovePlayer()
 		}
 	}
 	//Move East
-	if (command.EqualTo("move east") == true)
+	if (command.EqualTo("east") == true)
 	{
 		if (xpos == 2)
 		{
@@ -91,7 +122,7 @@ String Player::MovePlayer()
 		}
 	}
 	//Move South
-	if (command.EqualTo("move south") == true)
+	if (command.EqualTo("south") == true)
 	{
 		if (ypos == 2)
 		{
@@ -104,7 +135,7 @@ String Player::MovePlayer()
 		}
 	}
 	//Move West
-	if (command.EqualTo("move west") == true)
+	if (command.EqualTo("west") == true)
 	{
 		if (xpos == 0)
 		{
@@ -115,6 +146,10 @@ String Player::MovePlayer()
 			setPlayerLocation(xpos - 1, ypos);
 			return "You have gone west";
 		}
+	}
+	else
+	{
+		return  "Invaild Input";
 	}
 }
 

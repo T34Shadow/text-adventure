@@ -52,6 +52,12 @@ public:
 	char& operator[](size_t index);
 	const char& operator[](size_t index) const;
 
+	bool operator<(const String& other);
+
+	bool operator>(const String& other);
+
+
+
 private:
 /*
 * Put your internal data structures and members here

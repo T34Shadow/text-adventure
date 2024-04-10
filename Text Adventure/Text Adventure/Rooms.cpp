@@ -17,7 +17,7 @@ Rooms::Rooms(Item& _itemSlot)
 
 Rooms::~Rooms()
 {
-
+	//delete itme
 }
 
 

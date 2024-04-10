@@ -10,9 +10,9 @@ public:
 
 	~Player();
 
-	String MovePlayer();
-
 	void setPlayerLocation(int _xpos, int _ypos);
+
+	String MovePlayer();
 	
 	bool FindSpell(String spell);
 

@@ -22,7 +22,7 @@ Item::Item(String _name, String _description)//basic constructor
 
 Item::~Item()//Destructor
 {
-
+	
 }
 
 void Item::Use()

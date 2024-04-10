@@ -11,9 +11,11 @@ Spells::Spells()
 
 }
 
-Spells::Spells(String name, String description, int damage)
+Spells::Spells(String _name, String _description, int _damage)
 {
-
+	name = _name;
+	description = _description;
+	damage = _damage;
 }
 
 Spells::~Spells()
