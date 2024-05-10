@@ -32,15 +32,15 @@ void Lamp::SetDescription(String _other)
 
 void Lamp::Use()
 {
-	if (lightSwitch = true)
+	if (lightSwitch == true)
 	{
 		std::cout << "You have tured the light off" << std::endl;
-		lightSwitch == false;
+		lightSwitch = false;
 	}
 	else
 	{
 		std::cout << "You gace tured the light on" << std::endl;
-		lightSwitch == true;
+		lightSwitch = true;
 	}
 
 }
