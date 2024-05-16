@@ -5,32 +5,20 @@ Sand::Sand()
 }
 
 Sand::Sand(String _name)
+	:Item(_name)
 {
-	name = _name;
+
 }
 
 Sand::Sand(String _name, String _description)
+	:Item(_name, _description)
 {
-	name = _name;
-	description = _description;
+	
 }
 
-String Sand::GetName()
-{
-	return name;
-}
 
-String Sand::GetDescription()
-{
-	return description;
-}
-
-void Sand::SetDescription(String _other)
-{
-	description = _other;
-}
 
 void Sand::Use()
 {
-
+	std::cout << "You play with the loose grains of sand in your hands, watching it slip though your fingers." << std::endl;
 }

@@ -7,14 +7,15 @@ public:
 	Player();
 
 	~Player();
-
+	int GetPlayerXPos();
+	int GetPlayerYPos();
 	void SetPlayerPos(int _xpos, int _ypos);
 	
 	String MovePlayer();
 	bool FindSpell(String spell);
-	bool FindItem();
 
-
+	Spell* GetSpell(size_t _index);
+	
 private:
 
 	Spell* spellBook[6];

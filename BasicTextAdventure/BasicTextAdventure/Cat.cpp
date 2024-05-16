@@ -3,37 +3,33 @@
 
 Cat::Cat()
 {
-	
+	purring = false;
 }
 
 Cat::Cat(String _name)
+	:Item(_name)
 {
-	name = _name;
+	purring = false;
 }
 
 Cat::Cat(String _name, String _description)
+	:Item(_name, _description)
 {
-	name = _name;
-	description = _description;
+	purring = false;
 }
 
-String Cat::GetName()
-{
-	return name;
-} 
 
-String Cat::GetDescription()
-{
-	return description;
-}
-
-void Cat::SetDescription(String _other)
-{
-	description = _other;
-}
 
 void Cat::Use()
 {
 	purring = true;
-	std::cout << "The cat is purring" << std::endl;
+
+	if (purring == true)
+	{
+		std::cout << "The cat is purring" << std::endl;
+	}
+	else
+	{
+		std::cout << "The cat is not purring" << std::endl;
+	}
 }

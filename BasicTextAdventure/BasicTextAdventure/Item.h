@@ -6,15 +6,24 @@ class Item
 public:
 
 	Item();
+
+	Item(String _name);
 	
+	Item(String _name, String _description);
+
 	~Item();
+
+	String GetName();
+	String GetDescription();
+
+	void SetDescription(String _other);
+
+	virtual void Use() =0;
 
 protected:
 
-	virtual String GetName() =0;
-	virtual String GetDescription() =0;
+	String name;
+	String description;
 
-	virtual void SetDescription(String _other) =0;
-	virtual void Use() =0;
 
 };

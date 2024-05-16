@@ -2,34 +2,24 @@
 
 BoxOfSweets::BoxOfSweets()
 {
+	count = 6;
 }
 
 BoxOfSweets::BoxOfSweets(String _name)
+	:Item(_name)
 {
-	name = _name;
+	count = 6;
 }
 
 BoxOfSweets::BoxOfSweets(String _name, String _description)
+	:Item(_name, _description)
 {
-	name = _name;
-	description = _description;
+	count = 6;
 }
 
-String BoxOfSweets::GetName()
-{
 
-	return name;
-}
 
-String BoxOfSweets::GetDescription()
-{
-	return description;
-}
 
-void BoxOfSweets::SetDescription(String _other)
-{
-	description = _other;
-}
 
 void BoxOfSweets::Use()
 {

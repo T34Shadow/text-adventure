@@ -1,7 +1,10 @@
 #include "Spell.h"
 
-Spell::Spell(String name, String description, int damge)
+Spell::Spell(String _name, String _description, int _damage)
 {
+	name = _name;
+	description = _description;
+	damage = _damage;
 }
 
 Spell::~Spell()
@@ -10,12 +13,12 @@ Spell::~Spell()
 
 String Spell::GetName()
 {
-	return name->CStr();
+	return name;
 }
 
 String Spell::GetDescription()
 {
-	return description->CStr();
+	return description;
 }
 
 void Spell::Cast()

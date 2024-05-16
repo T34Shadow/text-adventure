@@ -3,8 +3,8 @@
 int main()
 {
 	Game* textAdventure = new Game;
-
-	textAdventure->SetStartPos(1,1);
 		
 	textAdventure->Run();
+
+	//delete textAdventure;
 }

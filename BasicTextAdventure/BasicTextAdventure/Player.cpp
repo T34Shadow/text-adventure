@@ -19,7 +19,16 @@ Player::~Player()
 	{
 		delete spellBook[i];
 	}
-	delete[] spellBook;
+	//delete[] spellBook;
+}
+
+int Player::GetPlayerXPos()
+{
+	return xPos;
+}
+int Player::GetPlayerYPos()
+{
+	return yPos;
 }
 
 void Player::SetPlayerPos(int _xpos, int _ypos)
@@ -30,7 +39,81 @@ void Player::SetPlayerPos(int _xpos, int _ypos)
 
 String Player::MovePlayer()
 {
-	return String();
+
+	//				<-	X  ->
+	//			0		1		2
+	// ^	0	room1	room2	room3	
+	// Y	1	room4	room5	room6
+	// v	2	room7	room8	room9
+
+	//moving the player.
+	//1.check to see what direction the player wants to move in.
+	//2.check to see if the player is on the edges of the map.
+	//2a.if on the edges and wanting to move in a direction that is not available, return 'you cannot move in that direction.'
+	//3.if available set the players location, and return 'you have moved in "direction"'.
+
+	String command;
+	std::cout << "Where would you like to move." << std::endl;
+	command.ReadFromConsole().ToLower();
+
+	//Move North
+	if (command.EqualTo("north") == true)
+	{
+		if (yPos == 0)
+		{
+			return "You cannot move in that direction, you have hit a wall.";
+		}
+
+		else
+		{
+			SetPlayerPos(xPos, yPos - 1);
+
+			return "You have gone north";
+		}
+	}
+	//Move East
+	if (command.EqualTo("east") == true)
+	{
+		if (xPos == 2)
+		{
+			return "You cannot move in that direction, you have hit a wall.";
+		}
+		else
+		{
+			SetPlayerPos(xPos + 1, yPos);
+			return "You have gone east";
+		}
+	}
+	//Move South
+	if (command.EqualTo("south") == true)
+	{
+		if (yPos == 2)
+		{
+			return "You cannot move in that direction, you have hit a wall.";
+		}
+		else
+		{
+			SetPlayerPos(xPos, yPos + 1);
+			return "You have gone south";
+		}
+	}
+	//Move West
+	if (command.EqualTo("west") == true)
+	{
+		if (xPos == 0)
+		{
+			return "You cannot move in that direction, you have hit a wall.";
+		}
+		else
+		{
+			SetPlayerPos(xPos - 1, yPos);
+			return "You have gone west";
+		}
+	}
+	else
+	{
+		return  "Invaild Input";
+	}
 }
 
 bool Player::FindSpell(String spell)
@@ -79,7 +162,8 @@ bool Player::FindSpell(String spell)
 	return false;
 }
 
-bool Player::FindItem()
+Spell* Player::GetSpell(size_t _index)
 {
-	return false;
+	return spellBook[_index];
 }
+

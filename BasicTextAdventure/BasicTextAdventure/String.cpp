@@ -321,7 +321,7 @@ String& String::ReadFromConsole() //Done
 String& String::WriteToConsole() //Done.
 {
 	//Print to the console.
-	std::cout << str << std::endl;
+	std::cout << str;
 	return*this;
 }
 

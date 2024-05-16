@@ -10,12 +10,12 @@ public:
 	~Game();
 
 	void Run();
-	void SetStartPos(int _xpos, int _ypos);
+	
 
 private:
 
-	Player* mainPlayer = new Player;
-	Room* dungeon[3][3];
+	Player* mainPlayer;
+	Room* level[3][3];
 	Item** items;
 
 };

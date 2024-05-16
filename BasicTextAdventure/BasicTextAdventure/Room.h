@@ -6,9 +6,13 @@ public:
 
 	Room();
 
-	~Room();
+	Room(Item& _itemSlot);
 
+	~Room();
+	void SetDescription(String _other);
 	String GetDescription();
+
+	Item* GetItem();
 
 private:
 

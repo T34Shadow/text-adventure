@@ -16,7 +16,7 @@ public:
 
 private:
 
-	String* name;
-	String* description;
+	String name;
+	String description;
 	int damage;
 };
