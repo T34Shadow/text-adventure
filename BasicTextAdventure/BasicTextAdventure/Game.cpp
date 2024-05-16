@@ -128,13 +128,12 @@ void Game::Run()
 			{
 				std::cout << "You have opened your spellbook, what spell would you like to find." << std::endl;
 
-					//loop to display the spells.
-					for (int i = 0; i < 6; i++)
-					{
-						
-						mainPlayer->GetSpell(i)->GetName().WriteToConsole();
-						std::cout << std::endl;
-					}
+				//	//loop to display the spells.
+				//	for (int i = 0; i < 6; i++)
+				//	{
+				//		mainPlayer->GetSpell(i)->GetName().WriteToConsole();
+				//		std::cout << std::endl;
+				//	}
 				
 				//what spell is the player finding.
 				String spellName;
@@ -146,6 +145,7 @@ void Game::Run()
 					std::cout << "You have found the spell: ";
 					spellName.WriteToConsole();
 					std::cout << std::endl;
+
 				}
 				else
 				{
